@@ -1,6 +1,7 @@
 const { DateTime } = require('luxon')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 module.exports = (config) => {
   config.addPlugin(navigationPlugin);
@@ -8,7 +9,7 @@ module.exports = (config) => {
 
   config.addPassthroughCopy('css');
   config.addPassthroughCopy('static');
-  
+  config.addPlugin(eleventyImageTransformPlugin);
   config.setDataDeepMerge(true);
 
   config.addFilter('htmlDateString', (dateObj) => {
