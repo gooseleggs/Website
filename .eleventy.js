@@ -17,11 +17,11 @@ module.exports = (config) => {
     formats: ['jpg', 'webp'],
 
     // optional, output image widths
-    widths: [400, 800, 1200],
+    widths: [400, 800, 1200,"auto"],
     // optional, attributes assigned on <img> override these values.
     defaultAttributes: {
        loading: 'lazy',
-       sizes:"(max-width: 600px) 100vw, 1200px",
+       sizes:"(max-width: 600px) 100vw",
         decoding: 'async',
     },
   }),
