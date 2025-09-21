@@ -1,7 +1,7 @@
 const { DateTime } = require('luxon')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
+const { eleventyImageTransformPlugin } = require('@11ty/eleventy-img');
 
 module.exports = (config) => {
   config.addPlugin(navigationPlugin);
@@ -9,9 +9,22 @@ module.exports = (config) => {
 
   config.addPassthroughCopy('css');
   config.addPassthroughCopy('static');
-  config.addPlugin(eleventyImageTransformPlugin);
   config.setDataDeepMerge(true);
+  config.addPlugin(eleventyImageTransformPlugin, {
+    // which file extensions to process
+    extensions: 'html',
+    // optional, output image formats
+    formats: ['jpg', 'webp'],
 
+    // optional, output image widths
+    widths: [400, 800, 1200],
+    // optional, attributes assigned on <img> override these values.
+    defaultAttributes: {
+       loading: 'lazy',
+       sizes:"(max-width: 600px) 100vw, 1200px",
+        decoding: 'async',
+    },
+  }),
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
   });
