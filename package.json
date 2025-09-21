@@ -5,11 +5,11 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-img": "^6.0.4",
-    "@11ty/eleventy-navigation": "^0.3.5",
-    "@11ty/eleventy-plugin-rss": "^1.1.1",
-    "concurrently": "^8.2.1",
-    "luxon": "^3.4.2",
-    "stylus": "^0.59.0"
+    "@11ty/eleventy-navigation": "^1.0.4",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "concurrently": "^9.2.1",
+    "luxon": "^3.7.2",
+    "stylus": "^0.64.0"
   },
   "scripts": {
     "build:stylus": "stylus --compress ./stylus/ --out ./static/css/",
@@ -18,5 +18,8 @@
     "watch:11ty": "eleventy --serve",
     "build": "npm run build:stylus && npm run build:11ty",
     "dev": "concurrently -n stylus,11ty \"npm:watch:stylus\" \"npm:watch:11ty\""
+  },
+  "dependencies": {
+    "@adobe/css-tools": "^4.4.4"
   }
 }
