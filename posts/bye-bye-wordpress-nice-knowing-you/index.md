@@ -53,7 +53,7 @@ Only a slight increase in speed which was surprising, considering there was no l
 ## Eleventy
 While the comparison is not going to be 100%, due to removing some old blogs, these are the stats for the demo site.  There are now 19 blog entries excluding this one.
 
-Size of site: **2.3MB**, or **0.055% of the WordPress site.** 
+Size of site: **2.3MB**, or (754MB (HTML+SQL data) / 2.3MB) = **0.3% of the WordPress site.** 
 
 Backups are done in Git, which means, I can get version control of it as well.
 
@@ -67,5 +67,20 @@ Out of the box, I obtained the following (mobile, then desktop):
 
 ![](Pasted%20image%2020250914141100.png)
 
+**Update 21 Sept 2025**
+I have now updated the Eleventy website with a few additional features:
+- Automatic selection of images based on the size of the device.
+- Display correctly between mobile and desktop.
+- Resolved issue with Accessibility so now get 100% across all aspects.
+
+With dynamic images, site is now 4MB in size, or **0.53**% of the WordPress data size; 4% of WordPress static size.
+
+**Update Oct 2025**
+More updates and streamlining.  I now have:
+ - Website built into a docker container (incl web server).
+ - Minifying HTML, CSS and JS code - reduces network bandwidth.
+ - Compressing all assets with gzip and brotli using highest compression during build and stored in docker image - reduces network bandwidth.
+ 
+So, with these changes, network bandwidth is significantly reduced.  The size has now increased to around 9MB due to storing different formats of images (10% of WordPress static size, but network bandwidth significantly reduced).
 ## Conclusion
 Eleventy for the win.  For the amount of blogs that I write, the size that it takes up, and the less issues of someone trying to hack me...its worth it!
