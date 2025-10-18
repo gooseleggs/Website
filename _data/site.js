@@ -3,18 +3,17 @@ module.exports = {
     title: "Smithcave Blog",
     description: "My random thoughts.",
     lang: "en",
-    siteUrl: "https://example.com/",
+    siteUrl: "https://thesmithcave.nz/",
   },
   feed: { // used in feed.xml.njk
-    subtitle: "Lorem ipsum dolor sit amet consecuteor",
+    subtitle: "These are my random thoughts",
     filename: "atom.xml",
     path: "/atom.xml",
-    id: "https://example.com/",
-    authorName: "John Doe",
-    authorEmail: "johndoe@example.com"
+    id: "https://thesmithcave.nz/",
+    authorName: "Kelvin Smith",
   },
   hero: { // used in hero section of main page ie. index.html.njk
     title: "Smithcave blog",
-    description: "This is my random thoughts"
+    description: "These are my random thoughts"
   }
 }
