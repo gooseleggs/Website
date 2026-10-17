@@ -20,6 +20,6 @@
     "dev": "concurrently -n stylus,11ty \"npm:watch:stylus\" \"npm:watch:11ty\""
   },
   "dependencies": {
-    "@adobe/css-tools": "^4.4.4"
+    "@adobe/css-tools": "^4.5.0"
   }
 }
